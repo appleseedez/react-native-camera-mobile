@@ -160,7 +160,12 @@ export default class Camera extends Component {
 
   componentWillUnmount() {
     this.cameraBarCodeReadListener.remove();
-
+  
+    if (Platform.OS === 'ios'){
+      
+    }else{
+      this.releaseCamera({})
+    }
     if (this.state.isRecording) {
       this.stopCapture();
     }
