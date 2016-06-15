@@ -281,7 +281,12 @@ public class RCTCameraModule extends ReactContextBaseJavaModule {
     public void stopCapture(final ReadableMap options, final Promise promise) {
         // TODO: implement video capture
     }
-
+    
+    @ReactMethod
+    public void releaseCamera(final ReadableMap options, final Promise promise) {
+        RCTCamera.getInstance().releaseCameraInstance(options.getInt("type"));
+    }
+    
     @ReactMethod
     public void hasFlash(ReadableMap options, final Promise promise) {
         Camera camera = RCTCamera.getInstance().acquireCameraInstance(options.getInt("type"));
