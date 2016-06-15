@@ -209,7 +209,7 @@ export default class Camera extends Component {
   }
   
   releaseCamera(options) {
-    const props = convertStringProps(this.props);
+    const props = convertNativeProps(this.props);
     options = {
       type: props.type,
       ...options
